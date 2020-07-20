@@ -42,6 +42,7 @@ button.onclick = function() {
 var result = dice.roll();
 console.log(result)
 printNumber(result);
+document.getElementById("button").className = "btn-block btn-danger";
 
 };
   
