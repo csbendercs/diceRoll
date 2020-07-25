@@ -1,17 +1,19 @@
+//global vars
 var dice = {
     sides: 10,
     roll: function () {
       var randomNumber = Math.floor(Math.random() * this.sides)+1;
       return randomNumber;
     }
-  }
-  
-  
-  
-//Prints dice roll to the page
+};
 
+var count = 0;
+var button = document.getElementById('button');
+   
+//Prints dice roll to the page
 function printNumber(number) {
     var placeholder = document.getElementById('placeholder');
+    var rollNum = document.getElementById("rollNum");
     var picture = document.getElementById('picture');
     var numDict = {
         1: "assets/autoFail.jpg",
@@ -28,22 +30,23 @@ function printNumber(number) {
     randomNum = numDict[number]
     if(randomNum.search("assets") == -1) {
         placeholder.innerHTML = randomNum;
-        document.getElementById('picture').src = "";
+        document.getElementById('picture').src = "assets/blank.jpg";
     }
     else {
-        placeholder.innerHTML = "";
+        placeholder.innerHTML = "--";
         document.getElementById('picture').src = randomNum;    
     }
-}
-
-var button = document.getElementById('button');
-
-button.onclick = function() {
-var result = dice.roll();
-console.log(result)
-printNumber(result);
-document.getElementById("button").className = "btn-block btn-danger";
-
+    count++;
+    rollNum.innerHTML = "Roll Number: " +  count;
 };
+
+function main() {
+    button.onclick = function() {
+        var result = dice.roll();
+        printNumber(result);
+    }
+};
+
+main();
   
   

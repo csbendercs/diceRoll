@@ -2,15 +2,20 @@
     font-family: Helvetica, Arial, sans-serif;
     text-align: center;
   }
+  #picture {
+    height: 200px;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   #placeholder {
     height: 200px;
     width: 200px;
-    padding: 50px;
     margin: 50px auto;
     font-size:150px;
   }
   #button {
     height: 200px;
-
   }
